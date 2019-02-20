@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <script>
+      // Load module and instantiate
+      var localizer = new (require('electron-localizer'))({locale: 'ja'});
+    </script>
+  </head>
+  <body>
+    <h1><localized-text>Hello World!</localized-text></h1>
+
+    <script>
+      // Can be used in Javascript too
+      console.log(localizer.__("Hello World!"));
+    </script>
+  </body>
+</html>
