@@ -11,13 +11,18 @@ function Localizer(options = {}) {
     var locales_directory = "locales_directory" in options ? options.locales_directory : "./locales";
     var locale_default = "locale_default" in options ? options.locale_default : "default";
     var localized_tag = "localized_tag" in options ? options.locales_directory : "localized-text";
+
+    var language = locale.split("-")[0]; // en-US -> en
     
-    // Load localized texts
+    // Load localized texts 
+    // First check if a file matches the locale name (e.g. en-US.json) ; if not, try with the language code only (e.g. en.json)
     if(fs.existsSync(path.join(locales_directory, locale + '.json')))
-        loadedLanguage = JSON.parse(fs.readFileSync(path.join(locales_directory, locale + '.json'), 'utf8'));
+       load_language(path.join(locales_directory, locale + '.json'));
+    else if(fs.existsSync(path.join(locales_directory, language + '.json')))
+        load_language(path.join(locales_directory, language + '.json'));
     else {
-        console.warn("No localization available for " + locale + ", loading default");
-        loadedLanguage = JSON.parse(fs.readFileSync(path.join(locales_directory, locale_default + '.json'), 'utf8'));
+        console.warn("No localization available for locale " + locale + " or language " + language + ", loading default");
+        load_language(path.join(locales_directory, locale_default + '.json'));
     }
 
     // Register localized-text HTML tag
@@ -36,5 +41,9 @@ Localizer.prototype.__ = function(phrase) {
         translation = phrase
 
     return translation
+}
+
+function load_language(path) {
+    loadedLanguage = JSON.parse(fs.readFileSync(path, 'utf8'));
 }
 
