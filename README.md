@@ -103,7 +103,7 @@ _Default: locales/_
 ### locale_default
 
 Set locale to load by default if not available.
-_Default: default
+_Default: default_
 
 ### localized_tag
 
