@@ -30,7 +30,7 @@ function Localizer(options = {}) {
 }
 
 Localizer.prototype.__ = function(phrase) {
-    let translation = loadedLanguage[phrase]
+    let translation = loadedLanguage[phrase.trim()]
 
     if(translation === undefined)
         translation = phrase
