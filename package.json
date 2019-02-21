@@ -1,26 +1,26 @@
 {
-    "name": "electron-localizer",
-    "description": "Easily localize HTML text inside your Electron application",
-    "version": "0.1.0",
-    "homepage": "https://github.com/KonsomeJona/electron-localizer",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/KonsomeJona/electron-localizer.git"
-    },
-    "keywords": [
-      "Electron",
-      "localize",
-      "translation",
-      "html",
-      "tag"
-    ],
-    "author": "Jonathan Odul",
-    "main": "./index",
-    "directories": {
-      "lib": "."
-    },
-    "license": "MIT",
-    "devDependencies": {
-      "electron": "^4.0.4"
-    }
+  "name": "electron-localizer",
+  "description": "Easily localize HTML text inside your Electron application",
+  "version": "0.1.1",
+  "homepage": "https://github.com/KonsomeJona/electron-localizer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KonsomeJona/electron-localizer.git"
+  },
+  "keywords": [
+    "Electron",
+    "localize",
+    "translation",
+    "html",
+    "tag"
+  ],
+  "author": "Jonathan Odul",
+  "main": "./index",
+  "directories": {
+    "lib": "."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^4.0.4"
   }
+}
