@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+
+        <script src="./localizer.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <p>
+            Let's localize `Hello World!` text:
+        </p>
+        <p>
+            Use navigator default language <i>(assuming your navigator is in english)</i>: <br />
+            <localized-text key="hello_world"></localized-text>
+        </p>
+        
+        <p>
+            Force localizer to use Japanese: <br />
+            <localized-text key="hello_world" lang="ja"></localized-text>
+        </p>
+
+        <p>
+            Use a language with non translation available: <br />
+            <localized-text key="hello_world" lang="xyz"></localized-text>
+        </p>
+    </body>
+</html>
